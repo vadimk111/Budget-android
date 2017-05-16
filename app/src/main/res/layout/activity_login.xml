@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.anzdroid.com/apk/res-auto"
+    xmlns:app2="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.home.vadik.budget.activities.LoginActivity">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        app2:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="8dp"
+        app2:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app2:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:id="@+id/email_inout">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/login_email" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/password_input"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="22dp"
+        app2:layout_constraintLeft_toLeftOf="@+id/email_inout"
+        app2:layout_constraintRight_toRightOf="@+id/email_inout"
+        app2:layout_constraintTop_toBottomOf="@+id/email_inout">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/login_password" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/signIn_btn"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="32dp"
+        android:onClick="signInClicked"
+        android:text="@string/login_signIn"
+        app2:layout_constraintLeft_toLeftOf="parent"
+        app2:layout_constraintRight_toRightOf="parent"
+        app2:layout_constraintTop_toBottomOf="@+id/password_input" />
+
+    <Button
+        android:id="@+id/createAccount_btn"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="150dp"
+        android:layout_height="51dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="8dp"
+        android:onClick="createAccountClicked"
+        android:text="@string/login_createAccount"
+        app2:layout_constraintHorizontal_bias="0.0"
+        app2:layout_constraintLeft_toLeftOf="@+id/signIn_btn"
+        app2:layout_constraintRight_toRightOf="@+id/signIn_btn"
+        app2:layout_constraintTop_toBottomOf="@+id/signIn_btn" />
+
+    <Button
+        android:id="@+id/resetPassword_btn"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="8dp"
+        android:onClick="resetPasswordClicked"
+        android:text="@string/login_resetPassword"
+        app2:layout_constraintHorizontal_bias="0.0"
+        app2:layout_constraintLeft_toLeftOf="@+id/createAccount_btn"
+        app2:layout_constraintRight_toRightOf="@+id/createAccount_btn"
+        app2:layout_constraintTop_toBottomOf="@+id/createAccount_btn" />
+</android.support.constraint.ConstraintLayout>

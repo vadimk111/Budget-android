@@ -1,5 +1,6 @@
-package com.home.vadik.budget;
+package com.home.vadik.budget.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -12,6 +13,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.home.vadik.budget.R;
 import com.home.vadik.budget.model.Category;
 
 import java.util.ArrayList;
@@ -52,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
         mListView = (ListView) findViewById(R.id.listView);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        Intent i = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(i);
     }
 
     @Override
