@@ -20,7 +20,7 @@ public class Expense extends ModelBaseObject {
     private static String dateKey = "date";
 
     public String title;
-    public Long amount;
+    public Double amount;
     public Date date;
 
     public Expense() {
@@ -32,7 +32,12 @@ public class Expense extends ModelBaseObject {
 
         Map<String, Object> value = (Map<String, Object>) snapshot.getValue();
         title = (String) value.get(titleKey);
-        amount = (Long) value.get(amountKey);
+        Object amountValue = value.get(amountKey);
+        if (Double.class.isInstance(amountValue)) {
+            amount = (Double) amountValue;
+        } else if (Long.class.isInstance(amountValue)) {
+            amount = ((Long) amountValue).doubleValue();
+        }
         date = ModelHelper.stringToDate((String) value.get(dateKey));
     }
 

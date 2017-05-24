@@ -16,13 +16,12 @@ import java.util.List;
 
 public class ModelHelper {
 
-    private static String uidPreferencesKey = Consts.sharedPreferencesFileName + ".uid";
     private static String automaticAuthenticationCompletedPreferencesKey = Consts.sharedPreferencesFileName + ".automaticAuthenticationCompleted";
     private static String dateFormat = "dd-MM-yyyy";
     private static String[] weekDays = new String[] { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
 
     public static String budgetIdForDate(Date date, SharedPreferences preferences) {
-        String uid = preferences.getString(uidPreferencesKey, null);
+        String uid = preferences.getString(Consts.uidPreferencesKey, null);
         if (uid == null && preferences.getBoolean(automaticAuthenticationCompletedPreferencesKey, false)) {
             uid = preferences.getString(Consts.emailPreferencesKey, null);
         }

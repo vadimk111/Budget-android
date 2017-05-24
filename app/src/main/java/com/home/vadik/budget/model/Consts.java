@@ -6,6 +6,7 @@ package com.home.vadik.budget.model;
 
 public class Consts {
     public static String sharedPreferencesFileName = "com.budget.app";
+    public static String uidPreferencesKey = sharedPreferencesFileName + ".uid";
     public static String emailPreferencesKey = sharedPreferencesFileName + ".email";
     public static String passwordPreferencesKey = Consts.sharedPreferencesFileName + ".password";
 }

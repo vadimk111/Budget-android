@@ -22,7 +22,7 @@ public class Category extends ModelBaseObject {
     private static String expensesKey = "expenses";
 
     public String title;
-    public Long amount;
+    public Double amount;
     public String parent;
     public long order = 0;
     public Boolean isBill;
@@ -39,7 +39,12 @@ public class Category extends ModelBaseObject {
 
         Map<String, Object> value = (Map<String, Object>) snapshot.getValue();
         title = (String) value.get(titleKey);
-        amount = (Long) value.get(amountKey);
+        Object amountValue = value.get(amountKey);
+        if (Double.class.isInstance(amountValue)) {
+            amount = (Double) amountValue;
+        } else if (Long.class.isInstance(amountValue)) {
+            amount = ((Long) amountValue).doubleValue();
+        }
         parent = (String) value.get(parentKey);
         order = (Long) value.get(orderKey);
         isBill = (Boolean) value.get(isBillKey);
@@ -55,7 +60,7 @@ public class Category extends ModelBaseObject {
         }
     }
 
-    public long calculatedAmount() {
+    public double calculatedAmount() {
         long m_amount = 0;
 
         if (subCategories == null) {
